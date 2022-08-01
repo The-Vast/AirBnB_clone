@@ -74,5 +74,5 @@ EOF  help  quit
 $
 ```
 ## Authors
-Wasiu Sanusi [The-Vast](https://github.com/The-Vast/)
-Abdulqudus Oladega
+* Wasiu Sanusi [The-Vast](https://github.com/The-Vast/)
+* Abdulqudus Oladega
