@@ -73,6 +73,3 @@ EOF  help  quit
 (hbnb) 
 $
 ```
-## Authors
-* Wasiu Sanusi [The-Vast](https://github.com/The-Vast/)
-* Abdulqudus Oladega
