@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """
-base class file
+base class file - mother of all classes
 """
 
 import uuid
 from datetime import datetime
 from json import JSONEncoder
-import models
 
 
 class BaseModel:
