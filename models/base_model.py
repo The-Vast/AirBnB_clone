@@ -33,12 +33,10 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-            models.storage.new(self)
 
     def save(self):
         """updates the informations of the class object"""
         self.updated_at = datetime.now()
-        models.storage.save()
     
     def to_dict(self):
         """return dictionary representaton (key/values) of the instance"""
