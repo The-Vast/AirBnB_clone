@@ -6,7 +6,7 @@ base class file
 import uuid
 from datetime import datetime
 from json import JSONEncoder
-import models
+# import models
 
 
 class BaseModel:
