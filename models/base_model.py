@@ -17,13 +17,13 @@ class BaseModel:
     """
 
     def __init__(self, **kwargs):
-        """initialize the instance of the class"""
+        """initialize the instance of the class using keyword arguments"""
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     value = datetime.strptime(
-                        value,
-                        '%Y-%m-%dT%H:%M:%S.%f')
+                            value,
+                            '%Y-%m-%dT%H:%M:%S.%f')
                 elif key == "__class__":
                     continue
 
@@ -32,13 +32,15 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def save(self):
-        """updates the informations of the class object"""
+        """save updtaed information of the class object"""
         self.updated_at = datetime.now()
-    
+        models.storage.save()
+
     def to_dict(self):
-        """return dictionary representaton (key/values) of the instance"""
+        """return dictionary representaton of the instance"""
         dict_repr = {}
         for key, value in self.__dict__.items():
             dict_repr[key] = value
@@ -48,17 +50,17 @@ class BaseModel:
         return dict_repr
 
     def __str__(self):
-        """return the string formated message when instance is called"""
-        class_name = self.__class__.__name__
-        return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
+        """return the string formatted message when instance is called"""
+        clName = self.__class__.__name__
+        return "[{}] ({}) {}".format(clName, self.id, self.__dict__)
 
 
 class BaseModelEncoder(JSONEncoder):
     """JSON Encoder for BaseModel
     """
 
-    def default(self, obj):
+    def default(self, o):
         """ default"""
-        if isinstance(obj, BaseModel):
-            return obj.to_dict()
-        return super().default(obj)
+        if isinstance(o, BaseModel):
+            return o.to_dict()
+        return super().default(o)
