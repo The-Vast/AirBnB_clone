@@ -82,7 +82,8 @@ class FileStorage:
                     self.new(model)
 
         except Exception as e:
-            print(e)
+            pass
+#             print(e)
 
     def update(self, obj_name, obj_id, attr, value):
         """update object with id `obj_id`"""
