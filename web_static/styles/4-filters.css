@@ -12,14 +12,18 @@ button {
 	color: #FFFFFF;
 	height: 48px;
 	width: 20%;
-	border: 0;
+	border: none;
 	border-radius: 4px;
 	text-align: center;
 	float: right;
-	margin-right: 30px;
 	margin-top: 10px;
+	margin-right: 30px;
 }
 
 button:hover {
-	opacity: 90%;
+	opacity: 0.9;
+}
+
+.clear {
+	clear: both;
 }
