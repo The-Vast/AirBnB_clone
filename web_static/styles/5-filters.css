@@ -4,9 +4,8 @@
 	width: 100%;
 	border: solid 1px #DDDDDD;
 	border-radius: 4px;
-	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	display: flex;
 }
 
 button {
@@ -20,6 +19,7 @@ button {
 	text-align: center;
 	/* float: right; */
 	/* margin-right: 30px; */
+	position: absolute;
 	right: 30px;
 }
 
@@ -28,6 +28,7 @@ button {
 button:hover {
 	opacity: 90%;
 }
+
 
 div > .location + .amenities {
 	height: 100%;
@@ -40,9 +41,11 @@ div > .location {
 
 .title {
 	font-weight: 600;
+	display: inline-block;
 }
 
 .subtitle {
 	font-weight: 400;
 	font-size: 14px;
+	margin-top: 0;
 }
